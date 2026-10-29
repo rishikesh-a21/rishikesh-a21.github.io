@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rishikesh A | Digital Marketing Portfolio</title>
+<meta name="description" content="Rishikesh A, MBA student in Chennai with experience in digital marketing, sales and promotions, and NSS leadership. Explore my experience, education and projects.">
+<meta name="author" content="Rishikesh A">
+<meta name="theme-color" content="#0f1b2d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#f4f6fa; --surface:#ffffff; --ink:#0f1b2d; --muted:#4a5a70; --line:#d5dce8;
+    --accent:#2f5d8f; --accent-ink:#ffffff; --nav-bg:rgba(244,246,250,.88);
+    --shadow:0 10px 30px rgba(15,27,45,.12);
+    --head:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+    --body:"DM Sans","Segoe UI",Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0b1522; --surface:#132033; --ink:#eaf0f8; --muted:#9db0c8; --line:#25364d; --accent:#7fa8d9; --accent-ink:#0b1522; --nav-bg:rgba(11,21,34,.88); --shadow:0 10px 30px rgba(0,0,0,.45); }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top:72px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }
+  body { margin:0; background:var(--bg); color:var(--ink); font:400 1.0625rem/1.65 var(--body); overflow-x:clip; animation:fadein .7s ease both; }
+  a { color:inherit; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline:3px solid var(--accent); outline-offset:3px; border-radius:4px; }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 1.5rem; }
+  .progress { position:fixed; top:0; left:0; width:100%; height:3px; background:var(--accent); transform-origin:0 50%; transform:scaleX(0); z-index:60; }
+
+  /* Navbar */
+  .nav { position:sticky; top:0; z-index:50; background:var(--nav-bg); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  .nav .wrap { display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:64px; }
+  .logo { font-family:var(--head); font-weight:700; font-size:1.4rem; text-decoration:none; }
+  .logo span { color:var(--accent); }
+  .menu { display:flex; align-items:center; gap:1.1rem; margin:0; padding:0; list-style:none; }
+  .menu a { text-decoration:none; color:var(--muted); font-weight:500; font-size:.95rem; transition:color .2s ease; }
+  .menu a:hover { color:var(--ink); }
+  .menu a.active { color:var(--ink); text-decoration:underline; text-decoration-color:var(--accent); text-decoration-thickness:2px; text-underline-offset:6px; }
+  .burger { display:none; background:none; border:1px solid var(--line); color:var(--ink); border-radius:8px; padding:.4rem .7rem; font-size:1.1rem; cursor:pointer; }
+  .btn { position:relative; overflow:hidden; display:inline-block; padding:.7rem 1.2rem; border-radius:8px; font-weight:700; text-decoration:none; border:2px solid var(--accent); cursor:pointer; font-family:inherit; font-size:1rem; transition:background .2s ease, border-color .2s ease, color .2s ease; }
+  .btn.primary { background:var(--accent); color:var(--accent-ink); }
+  .btn.ghost { background:transparent; color:var(--ink); border-color:var(--line); }
+  .btn.ghost:hover { border-color:var(--ink); }
+  .btn.small { padding:.45rem .9rem; font-size:.9rem; }
+  @media (max-width:940px) {
+    .burger { display:block; }
+    .menu { display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:flex-start; background:var(--bg); padding:1rem 1.5rem 1.5rem; border-bottom:1px solid var(--line); }
+    .menu.open { display:flex; }
+  }
+
+  /* Hero */
+  .hero { padding:4rem 0 3.5rem; }
+  .hero .wrap { display:grid; gap:2.75rem; align-items:center; }
+  @media (min-width:820px) { .hero .wrap { grid-template-columns:1.15fr .85fr; } }
+  .hello { color:var(--accent); font-weight:700; margin:0 0 .5rem; }
+  .hero h1 { font-family:var(--head); font-size:clamp(2.8rem,8vw,5rem); line-height:1; letter-spacing:-.025em; margin:0 0 1.25rem; }
+  .lead { color:var(--muted); font-size:1.15rem; max-width:52ch; margin:0 0 1.75rem; }
+  .btns { display:flex; gap:.75rem; flex-wrap:wrap; }
+  .photo-wrap { position:relative; width:min(300px,68vw); justify-self:center; }
+  .photo-wrap::before { content:""; position:absolute; inset:-22px; border-radius:50%; background:radial-gradient(closest-side, var(--accent), transparent 72%); opacity:.3; filter:blur(18px); }
+  .photo-wrap img { position:relative; z-index:1; display:block; width:100%; aspect-ratio:1; border-radius:50%; object-fit:cover; border:5px solid var(--surface); box-shadow:0 0 0 1px var(--line); transition:box-shadow .3s ease; }
+  .photo-wrap img:hover { box-shadow:0 0 0 6px var(--accent); }
+  .chip { position:absolute; z-index:2; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:.45rem .8rem; font-size:.88rem; font-weight:700; box-shadow:var(--shadow); line-height:1.3; }
+  .chip small { display:block; font-weight:400; color:var(--muted); font-size:.76rem; }
+  .chip.a { left:-12%; bottom:10%; }
+  .chip.b { right:-10%; top:8%; }
+  .scroll { display:inline-block; margin-top:2.5rem; color:var(--muted); font-size:.85rem; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; }
+
+  /* Sections */
+  section { padding:4.5rem 0; border-top:1px solid var(--line); }
+  .eyebrow { color:var(--accent); font-weight:700; font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; margin:0 0 .4rem; }
+  h2 { font-family:var(--head); font-size:clamp(1.9rem,4vw,2.5rem); line-height:1.15; letter-spacing:-.01em; margin:0 0 .7rem; }
+  h2::after { content:""; display:block; width:56px; height:4px; margin-top:.7rem; border-radius:2px; background:var(--accent); transform-origin:left center; }
+  .sub { color:var(--muted); max-width:60ch; margin:0 0 2.25rem; }
+  .grid { display:grid; gap:1.1rem; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); }
+  .card { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:1.4rem; transition:border-color .25s ease, box-shadow .25s ease; }
+  .card:hover { border-color:var(--accent); box-shadow:var(--shadow); }
+  .ico { font-size:1.6rem; display:block; margin-bottom:.5rem; }
+  .card h3 { font-family:var(--head); font-size:1.15rem; margin:0 0 .35rem; line-height:1.3; }
+  .card p { margin:0; color:var(--muted); font-size:.97rem; }
+  .card .org { font-size:.92rem; margin-bottom:.5rem; }
+  .tags { display:flex; flex-wrap:wrap; gap:.4rem; margin:.8rem 0 0; padding:0; list-style:none; }
+  .tags li { background:var(--bg); border:1px solid var(--line); border-radius:999px; padding:.1rem .75rem; font-size:.86rem; color:var(--muted); transition:background .2s ease, color .2s ease, border-color .2s ease; }
+  .tags li:hover { background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+
+  .about-grid { display:grid; gap:2.5rem; }
+  @media (min-width:820px) { .about-grid { grid-template-columns:1.2fr .8fr; } }
+  .about-grid p { margin:0 0 1rem; max-width:62ch; }
+  .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
+  .stat { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:1rem; text-align:center; }
+  .stat b { display:block; font-family:var(--head); font-size:2.2rem; color:var(--accent); line-height:1.1; }
+  .stat span { color:var(--muted); font-size:.88rem; }
+  .highlights { display:grid; gap:1rem; align-content:start; }
+
+  .timeline { position:relative; margin:0; padding:0 0 0 1.75rem; list-style:none; max-width:760px; }
+  .timeline::before { content:""; position:absolute; left:5px; top:6px; bottom:6px; width:2px; background:var(--line); }
+  .tl { position:relative; padding:0 0 1.9rem; }
+  .tl::before { content:""; position:absolute; left:-1.75rem; top:.45rem; width:12px; height:12px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--bg); }
+  .when { color:var(--accent); font-weight:700; font-size:.88rem; }
+  .tl h3 { margin:.1rem 0 0; font-family:var(--head); font-size:1.2rem; line-height:1.3; }
+  .tl .org { color:var(--muted); margin:0 0 .4rem; }
+  .tl ul { margin:.3rem 0 0; padding-left:1.1rem; max-width:64ch; }
+  .tl li { margin:.25rem 0; }
+
+  .gallery { column-width:240px; column-gap:1rem; margin-top:2.25rem; }
+  .gallery figure { margin:0 0 1rem; break-inside:avoid; overflow:hidden; border-radius:12px; border:1px solid var(--line); background:var(--surface); cursor:zoom-in; }
+  .gallery img { display:block; width:100%; height:auto; transition:transform .5s ease; }
+  .gallery figure:hover img { transform:scale(1.05); }
+  .lightbox { position:fixed; inset:0; z-index:100; background:rgba(5,10,18,.93); display:none; align-items:center; justify-content:center; padding:1.5rem; }
+  .lightbox.open { display:flex; }
+  .lightbox img { max-width:100%; max-height:100%; border-radius:8px; }
+  .lightbox button { position:absolute; top:1rem; right:1rem; background:#fff; color:#0f1b2d; border:0; border-radius:50%; width:42px; height:42px; font-size:1.2rem; cursor:pointer; }
+
+  .contact-grid { display:grid; gap:2rem; }
+  @media (min-width:820px) { .contact-grid { grid-template-columns:.9fr 1.1fr; } }
+  .info { display:grid; gap:1rem; align-content:start; }
+  .info a { text-decoration:none; }
+  .info .card { display:flex; gap:1rem; align-items:center; padding:1rem 1.2rem; }
+  .info .ico { margin:0; }
+  .info small { display:block; color:var(--muted); font-size:.82rem; }
+  .info b { font-weight:500; overflow-wrap:anywhere; }
+  .form { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:1.5rem; }
+  .form h3 { font-family:var(--head); margin:0 0 .3rem; font-size:1.3rem; }
+  .form p { margin:0 0 1rem; color:var(--muted); font-size:.95rem; }
+  .form label { display:block; font-weight:500; font-size:.92rem; margin:.8rem 0 .3rem; }
+  .form input, .form textarea { width:100%; font:inherit; color:var(--ink); background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:.65rem .8rem; transition:border-color .2s ease; }
+  .form input:focus, .form textarea:focus { border-color:var(--accent); }
+  .form textarea { min-height:120px; resize:vertical; }
+  .form .btn { margin-top:1.1rem; }
+  footer { padding:2rem 0 3rem; border-top:1px solid var(--line); color:var(--muted); font-size:.93rem; }
+  footer .wrap { display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+
+  /* Animation */
+  @keyframes fadein { from { opacity:0; } to { opacity:1; } }
+  @keyframes rise { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:none; } }
+  @keyframes pop { from { opacity:0; transform:scale(.82); } to { opacity:1; transform:none; } }
+  @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
+  @keyframes glow { 0%,100% { opacity:.2; } 50% { opacity:.42; } }
+  @keyframes nudge { 0%,100% { transform:translateY(0); } 50% { transform:translateY(5px); } }
+  @media (prefers-reduced-motion: no-preference) {
+    .nav { animation:fadein .7s ease both; }
+    .photo-wrap img { animation:pop .9s cubic-bezier(.2,.8,.2,1) both; }
+    .photo-wrap { animation:float 6s ease-in-out 1.2s infinite; }
+    .photo-wrap::before { animation:glow 5s ease-in-out infinite; }
+    .chip.a { animation:float 5s ease-in-out .5s infinite; }
+    .chip.b { animation:float 5.5s ease-in-out 1s infinite; }
+    .hello, .hero h1, .lead, .hero .btns, .scroll { animation:rise .8s cubic-bezier(.2,.8,.2,1) both; }
+    .hero h1 { animation-delay:.12s; } .lead { animation-delay:.28s; } .hero .btns { animation-delay:.44s; } .scroll { animation-delay:.6s; }
+    .btn::after { content:""; position:absolute; inset:0; background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%); transform:translateX(-120%); }
+    .btn:hover::after { transform:translateX(120%); transition:transform .6s ease; }
+    .btn:hover { transform:translateY(-2px); }
+    .js .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1), border-color .25s ease, box-shadow .25s ease; transition-delay:var(--d,0s); }
+    .js .reveal.in { opacity:1; transform:none; }
+    .js h2.reveal::after { transform:scaleX(0); transition:transform .8s cubic-bezier(.2,.8,.2,1) .3s; }
+    .js h2.reveal.in::after { transform:scaleX(1); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hello, .hero h1, .lead, .hero .btns, .photo-wrap, .scroll { animation:fadein 1s ease both; }
+    .js .reveal { opacity:0; transition:opacity .9s ease; transition-delay:var(--d,0s); }
+    .js .reveal.in { opacity:1; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#hero" aria-label="Rishikesh A, home">RA<span>.</span></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">&#9776;</button>
+    <ul class="menu" id="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#volunteering">Volunteering</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="btn primary small" href="Rishikesh_A_Resume.pdf" download>Download Resume</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="hero" style="border-top:0">
+    <div class="wrap">
+      <div>
+        <p class="hello">&#128075; Hello, I’m</p>
+        <h1>RISHIKESH A</h1>
+        <p class="lead">MBA student with a BCom (Accounting &amp; Finance) background and hands-on experience in digital marketing, sales and promotions. I want to start my career in digital marketing, with a focus on SEO, social media and online marketing.</p>
+        <div class="btns">
+          <a class="btn primary" href="#contact">Get In Touch</a>
+          <a class="btn ghost" href="#about">Know More</a>
+        </div>
+        <a class="scroll" href="#about">Scroll &#8595;</a>
+      </div>
+      <div class="photo-wrap">
+        <img src="photo.jpg" alt="Portrait of Rishikesh A" width="300" height="300">
+        <div class="chip a">&#127891; MBA<small>Pursuing</small></div>
+        <div class="chip b">&#129309; NSS Leader<small>3-year tenure</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <p class="eyebrow reveal">Get To Know Me</p>
+      <h2 class="reveal">About Me</h2>
+      <p class="sub reveal">A curious, hands-on MBA student who learns by doing and enjoys working with people.</p>
+      <div class="about-grid">
+        <div>
+          <p class="reveal">I’m <strong>Rishikesh A</strong>, an MBA student (2025–2027) at S.A. School of Management, Chennai, with a BCom in Accounting &amp; Finance from Patrician College of Arts and Science.</p>
+          <p class="reveal">I have worked as a digital marketing intern at Blubein Nutritions and Truly Social, and in sales and promotions as a Sales Consultant at Specs Makers and as a freelance promoter. My three years in the National Service Scheme, including a year as NSS Leader, taught me to coordinate teams and take responsibility.</p>
+          <p class="reveal">My goal is to contribute to a creative, growth-driven team while learning from experienced professionals and building my skills in SEO, social media and online marketing strategy.</p>
+          <div class="stats">
+            <div class="stat reveal"><b data-count="4">0</b><span>Internships</span></div>
+            <div class="stat reveal"><b data-count="3">0</b><span>Years in NSS</span></div>
+            <div class="stat reveal"><b data-count="3">0</b><span>Languages</span></div>
+          </div>
+        </div>
+        <div class="highlights">
+          <div class="card reveal"><span class="ico">&#128226;</span><h3>Digital Marketing</h3><p>SEO, social media and online marketing</p></div>
+          <div class="card reveal"><span class="ico">&#127909;</span><h3>Content &amp; Media</h3><p>Video editing and photography</p></div>
+          <div class="card reveal"><span class="ico">&#129309;</span><h3>Leadership</h3><p>NSS Leader, coordinating volunteer teams</p></div>
+          <div class="card reveal"><span class="ico">&#128172;</span><h3>Communication</h3><p>English, Tamil and Hindi</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <p class="eyebrow reveal">What I Can Do</p>
+      <h2 class="reveal">My Skills</h2>
+      <p class="sub reveal">A mix of creative tools, marketing interests and people skills.</p>
+      <div class="grid">
+        <div class="card reveal"><span class="ico">&#128187;</span><h3>Technical Skills</h3><ul class="tags"><li>Video editing</li><li>Photography</li><li>MS Office</li></ul></div>
+        <div class="card reveal"><span class="ico">&#128200;</span><h3>Digital Marketing</h3><p>Building skills in:</p><ul class="tags"><li>SEO</li><li>Social media</li><li>Online marketing</li></ul></div>
+        <div class="card reveal"><span class="ico">&#129504;</span><h3>Soft Skills</h3><ul class="tags"><li>Communication</li><li>Leadership</li><li>Teamwork</li><li>Adaptability</li><li>Mentoring</li></ul></div>
+        <div class="card reveal"><span class="ico">&#127760;</span><h3>Languages</h3><ul class="tags"><li>English</li><li>Tamil</li><li>Hindi</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <p class="eyebrow reveal">Where I’ve Worked</p>
+      <h2 class="reveal">Experience &amp; Internships</h2>
+      <p class="sub reveal">Real-world work in digital marketing, sales, promotions and community service.</p>
+      <ol class="timeline">
+        <li class="tl reveal"><span class="when">3 months</span><h3>Digital Marketing Intern</h3><p class="org">Blubein Nutritions Pvt Ltd</p></li>
+        <li class="tl reveal"><span class="when">30 days</span><h3>Digital Marketing Intern</h3><p class="org">Truly Social, Chetpet</p></li>
+        <li class="tl reveal"><span class="when">2 months</span><h3>Sales Consultant</h3><p class="org">Specs Makers</p>
+          <ul>
+            <li>Helped customers choose prescription glasses, sunglasses and contact lenses based on their needs and preferences.</li>
+            <li>Gave personalised service by understanding vision requirements and recommending suitable frames and lenses.</li>
+            <li>Met and exceeded sales targets through product knowledge and upselling.</li>
+          </ul></li>
+        <li class="tl reveal"><span class="when">Freelance</span><h3>Promoter</h3><p class="org">Multiple companies</p>
+          <ul>
+            <li>Collected customer feedback and market insights to support marketing strategy and product positioning.</li>
+            <li>Ran promotional campaigns for several companies to raise brand visibility and product awareness.</li>
+            <li>Maintained promotional materials and displays and kept brand representation consistent.</li>
+          </ul></li>
+        <li class="tl reveal"><span class="when">30 days</span><h3>Manager Trainee</h3><p class="org">Tony &amp; Guy Essensuals, Neelankarai</p></li>
+        <li class="tl reveal"><span class="when">15 days</span><h3>NGO Volunteer Intern</h3><p class="org">Chennai Volunteers</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <p class="eyebrow reveal">My Academic Journey</p>
+      <h2 class="reveal">Education</h2>
+      <p class="sub reveal">A solid academic base for a career in business and marketing.</p>
+      <ol class="timeline">
+        <li class="tl reveal"><span class="when">2025 – 2027 (Pursuing)</span><h3>Master of Business Administration</h3><p class="org">S.A. School of Management, Chennai</p></li>
+        <li class="tl reveal"><span class="when">2022 – 2025</span><h3>BCom (Accounting &amp; Finance)</h3><p class="org">Patrician College of Arts and Science</p></li>
+        <li class="tl reveal"><span class="when">2020 – 2022</span><h3>Higher Secondary</h3><p class="org">Anna Gem Science Park Matriculation Higher Secondary School</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <p class="eyebrow reveal">Hands-On Work</p>
+      <h2 class="reveal">Academic Projects</h2>
+      <p class="sub reveal">Projects from my MBA and analytics coursework.</p>
+      <div class="grid">
+        <div class="card reveal"><span class="ico">&#128202;</span><h3>E-Commerce Customers &amp; Sales Performance Analysis</h3><p class="org">Tableau capstone, Imarticus</p><p>Dashboards on customer and sales performance from Customers, Products and Orders data, combined into a Tableau Story with insights and recommendations.</p><ul class="tags"><li>Tableau</li><li>Dashboards</li><li>Data storytelling</li></ul></div>
+        <div class="card reveal"><span class="ico">&#128132;</span><h3>Lakmé Brand Check-Up</h3><p class="org">Brand management, 8-slide deck</p><p>A structured brand audit of Lakmé with a four-week analysis, top three recommendations and a cart-rescue plan for abandoned shopping carts.</p><ul class="tags"><li>Brand audit</li><li>Customer journey</li><li>Presentation design</li></ul></div>
+        <div class="card reveal"><span class="ico">&#128221;</span><h3>Zomato and MakeMyTrip Case Studies</h3><p class="org">Digital Marketing, internal assessment</p><p>Case analyses of how Zomato and MakeMyTrip use digital marketing, with reasoned points and examples.</p><ul class="tags"><li>Digital marketing</li><li>Case analysis</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="volunteering">
+    <div class="wrap">
+      <p class="eyebrow reveal">Giving Back</p>
+      <h2 class="reveal">Volunteering Experience</h2>
+      <p class="sub reveal">Three years of community service with the National Service Scheme.</p>
+      <div class="card reveal" style="max-width:760px">
+        <h3>National Service Scheme (NSS) Leader &amp; Volunteer</h3>
+        <p class="org">3-year tenure</p>
+        <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+          <li>Dedicated three years to impactful community service initiatives as an active NSS volunteer.</li>
+          <li>Selected to represent the unit and participate in a district-level NSS camp.</li>
+          <li>Promoted to NSS Leader for one year, taking responsibility for coordinating volunteer teams and organising community outreach programmes.</li>
+        </ul>
+        <ul class="tags"><li>Leadership</li><li>Community service</li><li>Team coordination</li></ul>
+      </div>
+      <div class="gallery" aria-label="NSS photos">
+        <figure class="reveal"><img src="nss-1.jpg" alt="NSS volunteers and staff in a group photo in the college courtyard" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+        <figure class="reveal"><img src="nss-2.jpg" alt="NSS volunteers and guests in a group photo on stage" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+        <figure class="reveal"><img src="nss-3.jpg" alt="NSS volunteers marching in a parade" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+        <figure class="reveal"><img src="nss-4.jpg" alt="NSS volunteers marching with college guests" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+        <figure class="reveal"><img src="nss-5.jpg" alt="NSS volunteers saluting in uniform" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+        <figure class="reveal"><img src="nss-6.jpg" alt="NSS volunteers and staff in a group photo in the hall" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+        <figure class="reveal"><img src="nss-7.jpg" alt="NSS volunteers and coordinators posing in front of a stage curtain" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+        <figure class="reveal"><img src="nss-8.jpg" alt="NSS volunteers and staff in a group photo outside the college block" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <p class="eyebrow reveal">Let’s Connect</p>
+      <h2 class="reveal">Get In Touch</h2>
+      <p class="sub reveal">I am actively seeking full-time opportunities in digital marketing. Email me, call me, or message me on LinkedIn.</p>
+      <div class="contact-grid">
+        <div class="info">
+          <a class="card reveal" href="tel:+918015752373"><span class="ico">&#128241;</span><span><small>Phone</small><b>+91 8015752373</b></span></a>
+          <a class="card reveal" href="mailto:rishikeshalagappan21@gmail.com"><span class="ico">&#9993;&#65039;</span><span><small>Email</small><b>rishikeshalagappan21@gmail.com</b></span></a>
+          <a class="card reveal" href="https://www.linkedin.com/in/rishikesha" target="_blank" rel="noopener"><span class="ico">&#128279;</span><span><small>LinkedIn</small><b>linkedin.com/in/rishikesha</b></span></a>
+          <div class="card reveal"><span class="ico">&#128205;</span><span><small>Location</small><b>Kottur, Chennai</b></span></div>
+        </div>
+        <form class="form reveal" id="msgForm">
+          <h3>Send Me a Message</h3>
+          <p>Write your message and it will open in your email app, ready to send.</p>
+          <label for="fn">Your name</label><input id="fn" name="name" type="text" required autocomplete="name">
+          <label for="fe">Your email</label><input id="fe" name="email" type="email" required autocomplete="email">
+          <label for="fm">Message</label><textarea id="fm" name="message" required></textarea>
+          <button class="btn primary" type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Rishikesh A. All rights reserved.</span>
+    <a href="https://www.linkedin.com/in/rishikesha" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button type="button" id="lbClose" aria-label="Close photo">&#10005;</button>
+  <img id="lbImg" alt="">
+</div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO = 'IntersectionObserver' in window;
+
+  // Mobile menu
+  var burger = document.getElementById('burger'), menu = document.getElementById('menu');
+  burger.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { menu.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }
+  });
+
+  // Stagger the scroll reveal by position inside the parent
+  var reveals = document.querySelectorAll('.reveal');
+  reveals.forEach(function (el) {
+    var idx = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.setProperty('--d', Math.min(idx * 0.08, 0.4) + 's');
+  });
+
+  // Counters
+  function countUp(el) {
+    var end = parseInt(el.getAttribute('data-count'), 10);
+    if (reduce) { el.textContent = end; return; }
+    var start = null;
+    function step(t) {
+      if (start === null) start = t;
+      var p = Math.min((t - start) / 1200, 1);
+      el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var counters = document.querySelectorAll('[data-count]');
+
+  if (!hasIO) {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+    counters.forEach(function (el) { el.textContent = el.getAttribute('data-count'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.classList.add('in');
+        io.unobserve(el);
+        setTimeout(function () { el.style.setProperty('--d', '0s'); }, 1400);
+        var c = el.querySelector('[data-count]');
+        if (c) countUp(c);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+
+    // Highlight the current section in the menu
+    var links = document.querySelectorAll('.menu a[href^="#"]');
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    document.querySelectorAll('main section[id]').forEach(function (s) { spy.observe(s); });
+  }
+
+  // Scroll progress
+  var bar = document.getElementById('progress'), ticking = false;
+  function update() {
+    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? h.scrollTop / max : 0) + ')';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
+  update();
+
+  // Photo viewer
+  var lb = document.getElementById('lightbox'), lbImg = document.getElementById('lbImg');
+  function closeLb() { lb.classList.remove('open'); lbImg.removeAttribute('src'); }
+  document.querySelectorAll('.gallery figure').forEach(function (fig) {
+    fig.tabIndex = 0; fig.setAttribute('role', 'button');
+    function open() { var im = fig.querySelector('img'); lbImg.src = im.src; lbImg.alt = im.alt; lb.classList.add('open'); }
+    fig.addEventListener('click', open);
+    fig.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+  lb.addEventListener('click', function (e) { if (e.target !== lbImg) closeLb(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+
+  // Message form opens the visitor's email app
+  document.getElementById('msgForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target;
+    var body = f.message.value + '\n\nFrom: ' + f.name.value + ' (' + f.email.value + ')';
+    window.location.href = 'mailto:rishikeshalagappan21@gmail.com?subject=' + encodeURIComponent('Portfolio message from ' + f.name.value) + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
